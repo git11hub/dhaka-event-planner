@@ -1,24 +1,47 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './components/Home/Home/Home';
+import DashBoard from './components/DashBoard/DashBoard/DashBoard';
+import OrderList from './components/DashBoard/OrderList/OrderList';
+import AddService from './components/DashBoard/AddService/AddService';
+import MakeAdmin from './components/DashBoard/MakeAdmin/MakeAdmin';
+import ManageServices from './components/DashBoard/ManageServices/ManageServices';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Switch>
+          <Route path="/dashBoard">
+            <DashBoard />
+          </Route>
+          <Route path="/orderList">
+            <OrderList />
+          </Route>
+          <Route path="/addService">
+            <AddService />
+          </Route>
+          <Route path="/makeAdmin">
+            <MakeAdmin />
+          </Route>
+          <Route path="/manageServices">
+            <ManageServices />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+        </Switch>
+    
+    </Router>
   );
 }
 
