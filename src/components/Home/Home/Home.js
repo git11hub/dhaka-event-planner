@@ -34,19 +34,25 @@ const Home = () => {
             </Container>
             <Hero></Hero>
             <Container>
+                <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Our Event Projects</h1>
+                <hr class="mt-2 mb-1" />
                 <Row>
                     {
                         events.map(event => <Event event={event}></Event>)
                     }
                 </Row>
-                <PhotoGallery></PhotoGallery>
+            </Container>
+            <PhotoGallery></PhotoGallery>
+            <Container>
                 <OurTeam></OurTeam>
+                <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Client Reviews</h1>
+                <hr class="mt-2 mb-1" />
                 <Row>
                     {
                         reviews.map(review => <Testimonial review={review}></Testimonial>)
                     }
                 </Row>
-                
+
                 <Pricing></Pricing>
             </Container>
             <Footer></Footer>
