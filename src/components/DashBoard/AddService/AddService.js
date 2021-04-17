@@ -12,6 +12,8 @@ const AddService = () => {
     const onSubmit = data => {
         const eventData = {
             event: data.eventName,
+            description: data.description,
+            price: data.price,
             imageURL: imageURL
         };
         const url = `http://localhost:5055/addEvent`;
@@ -52,6 +54,14 @@ const AddService = () => {
                 <Col className="mt-5" md={9}>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input defaultValue="" placeholder="Event Name" {...register("eventName")} />
+                        <br />
+                        <br />
+
+                        <input style={{height:"200px", width:"500px"}} defaultValue="" placeholder="description" {...register("description")} />
+                        <br />
+                        <br />
+
+                        <input defaultValue="" type="number" placeholder="price" {...register("price")} />
                         <br />
                         <br />
 

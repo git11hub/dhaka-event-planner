@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import { EventsContext } from '../../../App';
 import Footer from '../../Shared/Footer/Footer';
 import NavBar from '../../Shared/NavBar/NavBar';
 import Event from '../Event/Event';
@@ -12,7 +13,9 @@ import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
 
-    const [events, setEvents] = useState([]);
+    const [events, setEvents] = useContext(EventsContext);
+    console.log(events);
+    // const [events, setEvents] = useState([]);
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
@@ -36,9 +39,9 @@ const Home = () => {
             <Container>
                 <h1 class="font-weight-light text-center text-lg-left mt-5 mb-0">Our Event Projects</h1>
                 <hr class="mt-2 mb-1" />
-                <Row>
+                <Row>                    
                     {
-                        events.map(event => <Event event={event}></Event>)
+                        events && events.map(event => <Event event={event}></Event>)
                     }
                 </Row>
             </Container>

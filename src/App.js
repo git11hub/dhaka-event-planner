@@ -16,45 +16,53 @@ import ManageServices from './components/DashBoard/ManageServices/ManageServices
 import Review from './components/DashBoard/Review/Review';
 import Login from './components/Login/Login';
 import { createContext, useState } from 'react';
+import EventDetails from './components/EventDetails/EventDetails';
 
 export const UserContext = createContext();
+export const EventsContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [events, setEvents] = useState([]);
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <Router>
-        <Switch>
-          <Route path="/dashBoard">
-            <DashBoard />
-          </Route>
-          <Route path="/orderList">
-            <OrderList />
-          </Route>
-          <Route path="/addService">
-            <AddService />
-          </Route>
-          <Route path="/makeAdmin">
-            <MakeAdmin />
-          </Route>
-          <Route path="/manageServices">
-            <ManageServices />
-          </Route>
-          <Route path="/review">
-            <Review />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-     </UserContext.Provider>
+      <EventsContext.Provider value={[events, setEvents]}>
+        <Router>
+          <Switch>
+            <Route path="/dashBoard">
+              <DashBoard />
+            </Route>
+            <Route path="/orderList">
+              <OrderList />
+            </Route>
+            <Route path="/addService">
+              <AddService />
+            </Route>
+            <Route path="/makeAdmin">
+              <MakeAdmin />
+            </Route>
+            <Route path="/manageServices">
+              <ManageServices />
+            </Route>
+            <Route path="/review">
+              <Review />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/eventDetails/:id">
+              <EventDetails />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
+      </EventsContext.Provider>
+    </UserContext.Provider>
   );
 }
 
