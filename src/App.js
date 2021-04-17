@@ -14,11 +14,16 @@ import AddService from './components/DashBoard/AddService/AddService';
 import MakeAdmin from './components/DashBoard/MakeAdmin/MakeAdmin';
 import ManageServices from './components/DashBoard/ManageServices/ManageServices';
 import Review from './components/DashBoard/Review/Review';
+import Login from './components/Login/Login';
+import { createContext, useState } from 'react';
 
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
         <Switch>
           <Route path="/dashBoard">
             <DashBoard />
@@ -38,6 +43,9 @@ function App() {
           <Route path="/review">
             <Review />
           </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route exact path="/">
             <Home />
           </Route>
@@ -45,8 +53,8 @@ function App() {
             <Home />
           </Route>
         </Switch>
-    
-    </Router>
+      </Router>
+     </UserContext.Provider>
   );
 }
 
