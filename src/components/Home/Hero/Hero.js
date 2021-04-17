@@ -1,8 +1,7 @@
 import { Button, Container } from 'react-bootstrap';
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
-import bgImage from '../../../images/banner.jpg'
 import { Carousel } from 'react-bootstrap';
+import './Hero.css';
 
 const Hero = () => {
     return (        
@@ -10,7 +9,7 @@ const Hero = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80"
+                        src="https://images.unsplash.com/photo-1542042161784-26ab9e041e89?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -21,7 +20,7 @@ const Hero = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1131&q=80"
+                        src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1131&q=80"
                         alt="Second slide"
                     />
 
@@ -33,7 +32,7 @@ const Hero = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                        src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
                         alt="Third slide"
                     />
 

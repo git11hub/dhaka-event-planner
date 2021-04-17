@@ -10,7 +10,7 @@ const PhotoGallery = () => {
     return (        
             <Container fluid>
                 <Container>
-                <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Photo Gallery</h1>
+                <h1 class="font-weight-light text-center text-lg-left mt-5 mb-0">Photo Gallery</h1>
                 <hr class="mt-2 mb-5" />
                 </Container>
 

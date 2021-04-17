@@ -34,7 +34,7 @@ const Home = () => {
             </Container>
             <Hero></Hero>
             <Container>
-                <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Our Event Projects</h1>
+                <h1 class="font-weight-light text-center text-lg-left mt-5 mb-0">Our Event Projects</h1>
                 <hr class="mt-2 mb-1" />
                 <Row>
                     {
@@ -44,7 +44,7 @@ const Home = () => {
             </Container>
             <PhotoGallery></PhotoGallery>
             <Container>
-                <OurTeam></OurTeam>
+                {/* <OurTeam></OurTeam> */}
                 <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Client Reviews</h1>
                 <hr class="mt-2 mb-1" />
                 <Row>
@@ -52,7 +52,7 @@ const Home = () => {
                         reviews.map(review => <Testimonial review={review}></Testimonial>)
                     }
                 </Row>
-
+                
                 <Pricing></Pricing>
             </Container>
             <Footer></Footer>
