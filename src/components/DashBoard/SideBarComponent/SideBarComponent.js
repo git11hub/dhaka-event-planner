@@ -60,6 +60,14 @@ const SideBarComponent = () => {
                         <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
                     </NavIcon>
                     <NavText>
+                        <a href="/review">Review</a>
+                    </NavText>
+                </NavItem>
+                <NavItem eventKey="home">
+                    <NavIcon>
+                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                    </NavIcon>
+                    <NavText>
 
                     </NavText>
                 </NavItem>

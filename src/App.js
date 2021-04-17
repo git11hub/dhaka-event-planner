@@ -13,6 +13,7 @@ import OrderList from './components/DashBoard/OrderList/OrderList';
 import AddService from './components/DashBoard/AddService/AddService';
 import MakeAdmin from './components/DashBoard/MakeAdmin/MakeAdmin';
 import ManageServices from './components/DashBoard/ManageServices/ManageServices';
+import Review from './components/DashBoard/Review/Review';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/manageServices">
             <ManageServices />
+          </Route>
+          <Route path="/review">
+            <Review />
           </Route>
           <Route exact path="/">
             <Home />

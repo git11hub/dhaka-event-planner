@@ -9,9 +9,9 @@ const Event = ({event}) => {
             <Card className="mt-5" style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={event.imageURL} />
                 <Card.Body>
-                    <Card.Title><h4>{}</h4></Card.Title>
+                    <Card.Title>{event.event}</Card.Title>
                     <Card.Text>
-                        <h3><strong>{event.event}</strong> {}</h3>
+                        {/* <h3><strong>{event.event}</strong> {}</h3> */}
                     </Card.Text>
                     <Button variant="primary">Details...</Button>
                 </Card.Body>

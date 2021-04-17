@@ -13,29 +13,44 @@ import Testimonial from '../Testimonial/Testimonial';
 const Home = () => {
 
     const [events, setEvents] = useState([]);
+    const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:5055/events')
             .then(res => res.json())
             .then(data => setEvents(data))
-    },[])
+    }, []);
+
+    useEffect(() => {
+        fetch('http://localhost:5055/review')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, []);
 
     return (
-        <Container>
-            <NavBar></NavBar>
+        <>
+            <Container>
+                <NavBar></NavBar>
+            </Container>
             <Hero></Hero>
-            <Row>
-                {
-                    events.map(event => <Event event={event}></Event>)
-                }
-            </Row>
-
-            <Testimonial></Testimonial>
-            <PhotoGallery></PhotoGallery>
-            <OurTeam></OurTeam>
-            <Pricing></Pricing>
+            <Container>
+                <Row>
+                    {
+                        events.map(event => <Event event={event}></Event>)
+                    }
+                </Row>
+                <PhotoGallery></PhotoGallery>
+                <OurTeam></OurTeam>
+                <Row>
+                    {
+                        reviews.map(review => <Testimonial review={review}></Testimonial>)
+                    }
+                </Row>
+                
+                <Pricing></Pricing>
+            </Container>
             <Footer></Footer>
-        </Container>
+        </>
     );
 };
 
