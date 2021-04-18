@@ -15,7 +15,7 @@ const Review = () => {
             description: data.description,
             userImageURL: userImageURL
         };
-        const url = `http://localhost:5055/addReview`;
+        const url = `https://tranquil-lowlands-10989.herokuapp.com/addReview`;
         // console.log(eventData);
 
         fetch(url, {

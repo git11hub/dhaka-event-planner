@@ -8,7 +8,7 @@ const Pricing = () => {
 
             <div class="card-deck">
                 <div class="card">
-                    <img class="card-img-top" src="https://www.flaticon.com/svg/vstatic/svg/39/39862.svg?token=exp=1618668831~hmac=480e1cccfb8d79517f3023a6afb074f9" alt="Card image cap" />
+                    <img class="card-img-top w-50" src="https://i.ibb.co/BTcGbVH/basic.png" alt="Card image cap" />
                     <div class="card-body">
                         <h5 class="card-title">Basic</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -17,7 +17,7 @@ const Pricing = () => {
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="https://www.flaticon.com/svg/vstatic/svg/4252/4252330.svg?token=exp=1618668783~hmac=1025bd9703596ee821bc001227189617" alt="Card image cap" />
+                    <img class="card-img-top  w-50" src="https://i.ibb.co/q1wXcMZ/standard.png" alt="Card image cap" />
                     <div class="card-body">
                         <h5 class="card-title">Standard</h5>
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -26,7 +26,7 @@ const Pricing = () => {
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="https://www.flaticon.com/svg/vstatic/svg/3644/3644000.svg?token=exp=1618668902~hmac=d88298c52920f5d9e90186c6ff381cbc" alt="Card image cap" />
+                    <img class="card-img-top  w-50" src="https://i.ibb.co/3Fft640/premium.png" alt="Card image cap" />
                     <div class="card-body">
                         <h5 class="card-title">Premium</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>

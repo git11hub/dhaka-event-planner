@@ -17,6 +17,7 @@ import Review from './components/DashBoard/Review/Review';
 import Login from './components/Login/Login';
 import { createContext, useState } from 'react';
 import EventDetails from './components/EventDetails/EventDetails';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 export const EventsContext = createContext();
@@ -29,30 +30,30 @@ function App() {
       <EventsContext.Provider value={[events, setEvents]}>
         <Router>
           <Switch>
-            <Route path="/dashBoard">
+            <PrivateRoute path="/dashBoard">
               <DashBoard />
-            </Route>
-            <Route path="/orderList">
+            </PrivateRoute>
+            <PrivateRoute path="/orderList">
               <OrderList />
-            </Route>
-            <Route path="/addService">
+            </PrivateRoute>
+            <PrivateRoute path="/addService">
               <AddService />
-            </Route>
-            <Route path="/makeAdmin">
+            </PrivateRoute>
+            <PrivateRoute path="/makeAdmin">
               <MakeAdmin />
-            </Route>
-            <Route path="/manageServices">
+            </PrivateRoute>
+            <PrivateRoute path="/manageServices">
               <ManageServices />
-            </Route>
-            <Route path="/review">
+            </PrivateRoute>
+            <PrivateRoute path="/review">
               <Review />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/eventDetails/:id">
+            <PrivateRoute path="/eventDetails/:id">
               <EventDetails />
-            </Route>
+            </PrivateRoute>
             <Route exact path="/">
               <Home />
             </Route>

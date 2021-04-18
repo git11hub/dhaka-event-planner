@@ -16,7 +16,7 @@ const AddService = () => {
             price: data.price,
             imageURL: imageURL
         };
-        const url = `http://localhost:5055/addEvent`;
+        const url = `https://tranquil-lowlands-10989.herokuapp.com/addEvent`;
         // console.log(eventData);
 
         fetch(url, {

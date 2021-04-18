@@ -19,13 +19,13 @@ const Home = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5055/events')
+        fetch('https://tranquil-lowlands-10989.herokuapp.com/events')
             .then(res => res.json())
             .then(data => setEvents(data))
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5055/review')
+        fetch('https://tranquil-lowlands-10989.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);

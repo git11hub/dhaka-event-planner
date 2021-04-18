@@ -17,7 +17,7 @@ const EventDetails = () => {
     const order = () => {
         console.log('clicked on order button');
 
-        // const url = `http://localhost:5055/order`;
+        // const url = `https://tranquil-lowlands-10989.herokuapp.com/order`;
 
         // fetch(url, {
         //     method: 'POST',
