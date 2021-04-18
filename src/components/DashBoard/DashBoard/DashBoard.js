@@ -18,7 +18,6 @@ const DashBoard = () => {
                 </Col>
                 <Col md={9}>
                     <h1 className="mt-5">Click Toggle icon to see the options</h1>
-                    {/* <OrderList></OrderList>                     */}
                 </Col>
             </Row>
         </>

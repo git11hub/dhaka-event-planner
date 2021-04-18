@@ -1,23 +1,15 @@
 import React from 'react';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 
-// Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import SideBar from './SideBarComponent';
 import { useHistory } from 'react-router';
 
 const SideBarComponent = () => {
 
-    // const history = useHistory();
-
-    // const  orderList = () => {
-    //     history.push(`/dashBoard/${'addService'}`);
-    // }
-
     return (
         <SideNav className="bg-danger"
             onSelect={(selected) => {
-                // Add your code here
             }}
         >
             <SideNav.Toggle />
@@ -26,7 +18,6 @@ const SideBarComponent = () => {
                     <NavIcon>
                         <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
                     </NavIcon>
-                    {/* <Nav.Link href="/dashBoard">Dash Board</Nav.Link> */}
                     <NavText>
                         <a href="/orderList">Order list</a>
                     </NavText>

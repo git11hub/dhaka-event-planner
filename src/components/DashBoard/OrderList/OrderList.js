@@ -1,13 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
-import { OrdersContext } from '../../../App';
+import { OrdersContext, UserContext } from '../../../App';
 import { useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import SideBarComponent from '../SideBarComponent/SideBarComponent';
 import { useParams } from 'react-router';
 
 const OrderList = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext); 
+    console.log(loggedInUser);
 
     const { id } = useParams();
 
@@ -33,6 +36,7 @@ const OrderList = () => {
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">User Email</th>
                             <th scope="col">Product Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Status</th>
@@ -43,6 +47,7 @@ const OrderList = () => {
                             orders.map(order =>
                                 <tr>
                                     <th scope="row"></th>
+                                    <td>{loggedInUser.email}</td>
                                     <td>{order.event}</td>
                                     <td>{order.price}</td>
                                     <td>Pending</td>

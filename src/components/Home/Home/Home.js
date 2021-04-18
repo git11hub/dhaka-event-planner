@@ -8,20 +8,16 @@ import Hero from '../Hero/Hero';
 import OurTeam from '../OurTeam/OurTeam';
 import PhotoGallery from '../PhotoGallery/PhotoGallery';
 import Pricing from '../Pricing/Pricing';
-// import Services from '../Services/Services';
 import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [events, setEvents] = useContext(EventsContext);
-    const [admins, setAdmins] = useContext(AdminsContext);
-    // console.log(admins[0].adminEmail.length);
-    console.log(loggedInUser.email);
+    const [admins, setAdmins] = useContext(AdminsContext); 
     
     const myEmail = "alahidrabbi@gmail.com";
     const gotEmail = admins.find(admin => admin.adminEmail == myEmail);
-    // console.log(gotEmail.adminEmail);
     
     // const [events, setEvents] = useState([]);
     const [reviews, setReviews] = useState([]);
@@ -51,9 +47,9 @@ const Home = () => {
         <>
             <Container>
                 {/* <h2>hi: {loggedInUser.email}</h2> */}
-                {/* {gotEmail ?<h2>hi: {gotEmail.adminEmail}</h2>: <h3>paini re...</h3>}
+                {/* {gotEmail ?<h2>hi: {gotEmail.adminEmail}</h2>: <h3>paini</h3>}
                 {
-                    admins.map(admin => <h3>hi</h3>)
+                    admins.map(admin => <h3>info from admin</h3>)
                 } */}
                 <NavBar></NavBar>
             </Container>
