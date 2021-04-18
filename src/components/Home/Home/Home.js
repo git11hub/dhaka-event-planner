@@ -40,7 +40,7 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5055/admin')
+        fetch('https://tranquil-lowlands-10989.herokuapp.com/admin')
             .then(res => res.json())
             .then(data => setAdmins(data))
     }, []);

@@ -11,7 +11,7 @@ const MakeAdmin = () => {
         const adminEmail = {
             adminEmail: data.email
         };
-        const url = `http://localhost:5055/addAdmin`;
+        const url = `https://tranquil-lowlands-10989.herokuapp.com/addAdmin`;
         // console.log(adminEmail);
 
         fetch(url, {

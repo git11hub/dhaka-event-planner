@@ -13,13 +13,12 @@ const OrderList = () => {
 
     // const [orders, setOrders] = useState({});
     const [orders, setOrders] = useContext(OrdersContext);
-    console.log(orders[0].event);
 
     // const selectedOrder = orders.find(order => order._id == id);
     // console.log(selectedOrder);
 
     useEffect(() => {
-        fetch(`http://localhost:5055/order`)
+        fetch(`https://tranquil-lowlands-10989.herokuapp.com/order`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
