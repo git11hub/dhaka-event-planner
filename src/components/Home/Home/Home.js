@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { EventsContext } from '../../../App';
+import { AdminsContext, EventsContext, UserContext } from '../../../App';
 import Footer from '../../Shared/Footer/Footer';
 import NavBar from '../../Shared/NavBar/NavBar';
 import Event from '../Event/Event';
@@ -13,10 +13,19 @@ import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
 
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [events, setEvents] = useContext(EventsContext);
-    console.log(events);
+    const [admins, setAdmins] = useContext(AdminsContext);
+    // console.log(admins[0].adminEmail.length);
+    console.log(loggedInUser.email);
+    
+    const myEmail = "alahidrabbi@gmail.com";
+    const gotEmail = admins.find(admin => admin.adminEmail == myEmail);
+    // console.log(gotEmail.adminEmail);
+    
     // const [events, setEvents] = useState([]);
     const [reviews, setReviews] = useState([]);
+
 
     useEffect(() => {
         fetch('https://tranquil-lowlands-10989.herokuapp.com/events')
@@ -30,9 +39,22 @@ const Home = () => {
             .then(data => setReviews(data))
     }, []);
 
+    useEffect(() => {
+        fetch('http://localhost:5055/admin')
+            .then(res => res.json())
+            .then(data => setAdmins(data))
+    }, []);
+
+    
+
     return (
         <>
             <Container>
+                {/* <h2>hi: {loggedInUser.email}</h2> */}
+                {/* {gotEmail ?<h2>hi: {gotEmail.adminEmail}</h2>: <h3>paini re...</h3>}
+                {
+                    admins.map(admin => <h3>hi</h3>)
+                } */}
                 <NavBar></NavBar>
             </Container>
             <Hero></Hero>

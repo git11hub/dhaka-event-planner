@@ -28,7 +28,7 @@ const SideBarComponent = () => {
                     </NavIcon>
                     {/* <Nav.Link href="/dashBoard">Dash Board</Nav.Link> */}
                     <NavText>
-                        <a href="/dashBoard">Order list</a>
+                        <a href="/orderList">Order list</a>
                     </NavText>
                 </NavItem>
                 <NavItem eventKey="home">

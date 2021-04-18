@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { EventsContext } from '../../App';
+import NavBar from '../Shared/NavBar/NavBar';
 
 const EventDetails = () => {
 
@@ -17,22 +18,23 @@ const EventDetails = () => {
     const order = () => {
         console.log('clicked on order button');
 
-        // const url = `https://tranquil-lowlands-10989.herokuapp.com/order`;
+        const url = `http://localhost:5055/order`;
 
-        // fetch(url, {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(selectedEvent)
-        // })
-        //     .then(res => console.log('server side response', res))
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(selectedEvent)
+        })
+            .then(res => console.log('server side response', res))
     }
 
     return (
         <Container className="mt-5">
+            <NavBar></NavBar>
             
-                <h2>{selectedEvent.event}</h2>
+                <h2 className="mt-5">{selectedEvent.event}</h2>
                 <p>{selectedEvent.description}</p>
             
             <Row>

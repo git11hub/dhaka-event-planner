@@ -4,7 +4,7 @@ import { Card, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 
 const Event = ({event}) => {
-    console.log(event);
+    // console.log(event);
 
     const history = useHistory();
 

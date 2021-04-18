@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -21,47 +20,55 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 export const EventsContext = createContext();
+export const AdminsContext = createContext();
+export const OrdersContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [events, setEvents] = useState([]);
+  const [admins, setAdmins] = useState([]);
+  const [orders, setOrders] = useState([]);
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <EventsContext.Provider value={[events, setEvents]}>
-        <Router>
-          <Switch>
-            <PrivateRoute path="/dashBoard">
-              <DashBoard />
-            </PrivateRoute>
-            <PrivateRoute path="/orderList">
-              <OrderList />
-            </PrivateRoute>
-            <PrivateRoute path="/addService">
-              <AddService />
-            </PrivateRoute>
-            <PrivateRoute path="/makeAdmin">
-              <MakeAdmin />
-            </PrivateRoute>
-            <PrivateRoute path="/manageServices">
-              <ManageServices />
-            </PrivateRoute>
-            <PrivateRoute path="/review">
-              <Review />
-            </PrivateRoute>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <PrivateRoute path="/eventDetails/:id">
-              <EventDetails />
-            </PrivateRoute>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/home">
-              <Home />
-            </Route>
-          </Switch>
-        </Router>
+        <AdminsContext.Provider value={[admins, setAdmins]}>
+          <OrdersContext.Provider value={[orders, setOrders]}>
+            <Router>
+              <Switch>
+                <PrivateRoute path="/dashBoard">
+                  <DashBoard />
+                </PrivateRoute>
+                <PrivateRoute path="/orderList">
+                  <OrderList />
+                </PrivateRoute>
+                <PrivateRoute path="/addService">
+                  <AddService />
+                </PrivateRoute>
+                <PrivateRoute path="/makeAdmin">
+                  <MakeAdmin />
+                </PrivateRoute>
+                <PrivateRoute path="/manageServices">
+                  <ManageServices />
+                </PrivateRoute>
+                <PrivateRoute path="/review">
+                  <Review />
+                </PrivateRoute>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <PrivateRoute path="/eventDetails/:id">
+                  <EventDetails />
+                </PrivateRoute>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/home">
+                  <Home />
+                </Route>
+              </Switch>
+            </Router>
+          </OrdersContext.Provider>
+        </AdminsContext.Provider>
       </EventsContext.Provider>
     </UserContext.Provider>
   );
