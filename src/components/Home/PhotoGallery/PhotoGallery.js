@@ -37,7 +37,7 @@ const PhotoGallery = () => {
                     </div>
                     <div class="col-lg-3 col-md-4 col-6">
                         <a href="#" class="d-block mb-4 h-100">
-                            <img class="img-fluid img-thumbnail" src="https://images.unsplash.com/photo-1560173045-beaf11c65dce?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" alt="" />
+                            <img class="img-fluid img-thumbnail" src="https://images.unsplash.com/photo-1583875762487-5f8f7c718d14?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" />
                         </a>
                     </div>
                     <div class="col-lg-3 col-md-4 col-6">

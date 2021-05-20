@@ -17,6 +17,8 @@ import Login from './components/Login/Login';
 import { createContext, useState } from 'react';
 import EventDetails from './components/EventDetails/EventDetails';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import CheckOut from './components/CheckOut/CheckOut';
+import SignUp from './components/Home/SignUp/SignUp';
 
 export const UserContext = createContext();
 export const EventsContext = createContext();
@@ -28,10 +30,13 @@ function App() {
   const [events, setEvents] = useState([]);
   const [admins, setAdmins] = useState([]);
   const [orders, setOrders] = useState([]);
+
+  console.log(admins);
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <EventsContext.Provider value={[events, setEvents]}>
-        <AdminsContext.Provider value={[admins, setAdmins]}>
+    <AdminsContext.Provider value={[admins, setAdmins]}>
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+        <EventsContext.Provider value={[events, setEvents]}>
+
           <OrdersContext.Provider value={[orders, setOrders]}>
             <Router>
               <Switch>
@@ -53,8 +58,14 @@ function App() {
                 <PrivateRoute path="/review">
                   <Review />
                 </PrivateRoute>
+                <PrivateRoute path="/checkOut">
+                  <CheckOut />
+                </PrivateRoute>
                 <Route path="/login">
                   <Login />
+                </Route>
+                <Route path="/signup">
+                  <SignUp />
                 </Route>
                 <PrivateRoute path="/eventDetails/:id">
                   <EventDetails />
@@ -68,9 +79,10 @@ function App() {
               </Switch>
             </Router>
           </OrdersContext.Provider>
-        </AdminsContext.Provider>
-      </EventsContext.Provider>
-    </UserContext.Provider>
+
+        </EventsContext.Provider>
+      </UserContext.Provider>
+    </AdminsContext.Provider>
   );
 }
 

@@ -14,10 +14,15 @@ const Home = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [events, setEvents] = useContext(EventsContext);
-    const [admins, setAdmins] = useContext(AdminsContext); 
+
+
+    // const [admins, setAdmins] = useContext(AdminsContext); 
+    // console.log(admins);
+
+    
     
     const myEmail = "alahidrabbi@gmail.com";
-    const gotEmail = admins.find(admin => admin.adminEmail == myEmail);
+    // const gotEmail = admins.find(admin => admin.adminEmail == myEmail);
     
     // const [events, setEvents] = useState([]);
     const [reviews, setReviews] = useState([]);
@@ -35,11 +40,11 @@ const Home = () => {
             .then(data => setReviews(data))
     }, []);
 
-    useEffect(() => {
-        fetch('https://tranquil-lowlands-10989.herokuapp.com/admin')
-            .then(res => res.json())
-            .then(data => setAdmins(data))
-    }, []);
+    // useEffect(() => {
+    //     fetch('https://tranquil-lowlands-10989.herokuapp.com/admin')
+    //         .then(res => res.json())
+    //         .then(data => setAdmins(data))
+    // }, []);
 
     
 

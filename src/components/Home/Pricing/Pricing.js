@@ -1,6 +1,14 @@
 import React from 'react';
+import { useHistory } from 'react-router';
+
+
 
 const Pricing = () => {
+    const history = useHistory();
+
+    const payment = () => {
+        history.push(`/checkOut`)
+    }
     return (
         <>
             <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Our Pricing</h1>
@@ -14,6 +22,7 @@ const Pricing = () => {
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         <h4 class="card-title">$300</h4>
+                        <button onClick={payment} className="btn btn-primary">Order</button>
                     </div>
                 </div>
                 <div class="card">
@@ -23,6 +32,7 @@ const Pricing = () => {
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         <h4 class="card-title">$500</h4>
+                        <button onClick={payment} className="btn btn-primary">Order</button>
                     </div>
                 </div>
                 <div class="card">
@@ -32,6 +42,7 @@ const Pricing = () => {
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         <h4 class="card-title">$900</h4>
+                        <button onClick={payment} className="btn btn-primary">Order</button>
                     </div>
                 </div>
             </div>

@@ -42,7 +42,7 @@ const EventDetails = () => {
                     <h2>${selectedEvent.price}</h2>
                 </Col>
                 <Col>
-                    <Button onClick={order}>Order</Button>
+                    {/* <Button onClick={order}>Order</Button> */}
                 </Col>
             </Row>
         </Container>

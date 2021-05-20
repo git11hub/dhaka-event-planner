@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { UserContext } from '../../../App';
+import { AdminsContext, UserContext } from '../../../App';
 import Admin from '../Admin/Admin';
 import OrderList from '../OrderList/OrderList';
 import SideBarComponent from '../SideBarComponent/SideBarComponent';
@@ -9,7 +9,10 @@ import User from '../User/User';
 
 const DashBoard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    console.log(loggedInUser.email);
+    // console.log(loggedInUser.email);
+
+    const [admins, setAdmins] = useContext(AdminsContext);
+    console.log(admins);
     return (
         <>
             <Row>
